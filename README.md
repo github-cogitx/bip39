@@ -20,10 +20,10 @@ Then, install the python-mnemonic package (pip install mnemonic).
 Here is the complete script for generating a BIP39 mnemonic with an optional passphrase:
 
 
-from mnemonic import Mnemonic
-import binascii
+    from mnemonic import Mnemonic
+    import binascii
 
-def generate_bip39_seed_with_passphrase(num_words=24, passphrase=''):
+    def generate_bip39_seed_with_passphrase(num_words=24, passphrase=''):
     if num_words not in [12, 15, 18, 21, 24]:
         raise ValueError('Number of words should be one of the following: 12, 15, 18, 21, 24')
 
@@ -37,11 +37,12 @@ def generate_bip39_seed_with_passphrase(num_words=24, passphrase=''):
     hex_seed = binascii.hexlify(seed)
     return words, hex_seed
 
-# Example usage with your passphrase 'sillysalad'
-seed_phrase, hex_seed = generate_bip39_seed_with_passphrase(24, 'sillysalad')
-print('BIP39 Mnemonic (24 words):', seed_phrase)
-print('Seed with Passphrase:', hex_seed)
-Usage
+    # Example usage with your passphrase 'sillysalad'
+    seed_phrase, hex_seed = generate_bip39_seed_with_passphrase(24, 'sillysalad')
+    print('BIP39 Mnemonic (24 words):', seed_phrase)
+    print('Seed with Passphrase:', hex_seed)
+
+# Usage
 Replace 'sillysalad' with your chosen passphrase. The script will output a 24-word BIP39 mnemonic and its corresponding seed in hexadecimal format.
 
 # Security Considerations
